@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruleta del Deseo — Fuego & Deseo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav>
+    <a href="index.html" class="nav-back">← Volver</a>
+    <div class="nav-logo">🎡 Ruleta <span>del Deseo</span></div>
+  </nav>
+
+  <div class="page-wrap">
+    <h1 class="page-title anim-fade">Ruleta <em style="font-style:italic;color:var(--rouge)">del Deseo</em></h1>
+    <p class="page-sub anim-fade">Gira y déjate sorprender</p>
+
+    <!-- INTENSITY -->
+    <div class="intensity-bar anim-fade">
+      <button class="intensity-btn active" data-level="suave">🌸 Suave</button>
+      <button class="intensity-btn" data-level="travieso">🔥 Travieso</button>
+      <button class="intensity-btn" data-level="hot">💥 Muy Hot</button>
+      <button class="intensity-btn" data-level="custom">✏️ Personalizado</button>
+    </div>
+
+    <div class="wheel-section">
+      <!-- WHEEL -->
+      <div class="wheel-container">
+        <div class="wheel-pointer"></div>
+        <canvas id="wheel" width="340" height="340"></canvas>
+        <button class="wheel-center-btn" id="spinBtn">🎡</button>
+      <div class="wheel-result" id="wheelResult">
+        <div class="result-category" id="resultCategory">—</div>
+        <div class="result-main" id="resultMain">—</div>
+        <div style="margin-top:20px;" id="resultTimer" style="display:none;">
+          <div class="timer-display" id="timerDisplay">00:30</div>
+          <div class="timer-bar"><div class="timer-fill" id="timerFill" style="width:100%"></div></div>
+        </div>
+      </div>
+
+      <!-- TIMER -->
+      <div class="timer-section">
+        <div class="timer-label">⏱ Temporizador</div>
+        <div class="timer-controls">
+          <button class="timer-preset" data-sec="0">Sin tiempo</button>
+          <button class="timer-preset active" data-sec="30">30 seg</button>
+          <button class="timer-preset" data-sec="60">1 min</button>
+          <button class="timer-preset" data-sec="120">2 min</button>
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="actions-row">
+        <button class="btn btn-primary" id="spinActionBtn">🎡 &nbsp;Girar ruleta</button>
+        <button class="btn btn-ghost" id="customBtn">✏️ &nbsp;Personalizar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM MODAL -->
+  <div class="modal-backdrop" id="customModal">
+    <div class="modal">
+      <button class="modal-close close-modal">✕</button>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:4px;">Personalizar ruleta</h2>
+      <p style="font-size:0.8rem;color:rgba(250,240,230,0.4);margin-bottom:20px;">Agrega tus propios segmentos</p>
+
+      <label class="field-label">Nuevo segmento</label>
+      <div style="display:flex;gap:8px;margin-bottom:16px;">
+        <input type="text" class="input" id="newSegInput" placeholder="Ej: Masaje en la espalda...">
+        <button class="btn btn-gold" id="addSegBtn">+ Agregar</button>
+      </div>
+
+      <div class="custom-seg-list" id="customSegList"></div>
+
+      <div style="margin-top:24px;display:flex;gap:8px;justify-content:flex-end;">
+        <button class="btn btn-ghost close-modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="ruleta.js" defer></script>
+</body>
+</html>

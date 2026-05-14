@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados Hot — Fuego & Deseo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav>
+    <a href="index.html" class="nav-back">← Volver</a>
+    <div class="nav-logo">🎲 Dados <span>Hot</span></div>
+  </nav>
+
+  <div class="page-wrap">
+    <h1 class="page-title anim-fade">Dados <em style="font-style:italic;color:var(--rouge)">Hot</em></h1>
+    <p class="page-sub anim-fade">Tira los dados y haz lo que el destino ordene</p>
+
+    <!-- INTENSITY -->
+    <div class="intensity-bar anim-fade" id="intensityBar">
+      <button class="intensity-btn active" data-level="suave">🌸 Suave</button>
+      <button class="intensity-btn" data-level="travieso">🔥 Travieso</button>
+      <button class="intensity-btn" data-level="hot">💥 Muy Hot</button>
+      <button class="intensity-btn" data-level="custom">✏️ Personalizado</button>
+    </div>
+
+    <div class="dice-arena">
+      <!-- DICE -->
+      <div class="dice-pair">
+        <div class="die-wrap">
+          <div class="die-label">Acción</div>
+          <div class="die" id="dieAccion">
+            <div class="dots-decor"><div class="dot-d"></div><div class="dot-d"></div><div class="dot-d"></div><div class="dot-d"></div></div>
+            <div class="die-emoji" id="dieAccionEmoji">🎲</div>
+            <div class="die-text" id="dieAccionText">Tira</div>
+          </div>
+        </div>
+
+        <div class="die-vs">×</div>
+
+        <div class="die-wrap">
+          <div class="die-label">Zona</div>
+          <div class="die" id="dieZona">
+            <div class="dots-decor"><div class="dot-d"></div><div class="dot-d"></div><div class="dot-d"></div><div class="dot-d"></div></div>
+            <div class="die-emoji" id="dieZonaEmoji">🎲</div>
+            <div class="die-text" id="dieZonaText">los dados</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="result-card" id="resultCard">
+        <div class="result-verb" id="resAccion">—</div>
+        <div class="result-connector">en</div>
+        <div class="result-body" id="resZona">—</div>
+        <div id="resTimer" style="margin-top:16px;display:none;">
+          <div class="timer-display" id="timerDisplay">00:30</div>
+          <div class="timer-bar"><div class="timer-fill" id="timerFill" style="width:100%"></div></div>
+        </div>
+      </div>
+
+      <!-- TIMER PRESETS -->
+      <div class="timer-section">
+        <div class="timer-label">⏱ Temporizador del reto</div>
+        <div class="timer-controls">
+          <button class="timer-preset" data-sec="0">Sin tiempo</button>
+          <button class="timer-preset active" data-sec="30">30 seg</button>
+          <button class="timer-preset" data-sec="60">1 min</button>
+          <button class="timer-preset" data-sec="120">2 min</button>
+          <button class="timer-preset" data-sec="300">5 min</button>
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div class="actions-row">
+        <button class="btn btn-primary" id="rollBtn">🎲 &nbsp;Tirar dados</button>
+        <button class="btn btn-ghost" id="customBtn">✏️ &nbsp;Personalizar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM MODAL -->
+  <div class="modal-backdrop" id="customModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:4px;">Personalizar dados</h2>
+      <p style="font-size:0.8rem;color:rgba(250,240,230,0.4);margin-bottom:24px;">Agrega tus propias acciones y zonas</p>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="acciones">Acciones</button>
+        <button class="tab-btn" data-tab="zonas">Zonas</button>
+      </div>
+
+      <div id="tabAcciones">
+        <label class="field-label">Nueva acción</label>
+        <div style="display:flex;gap:8px;margin-bottom:16px;">
+          <input type="text" class="input" id="inputAccion" placeholder="Ej: Masajea..." style="resize:none;">
+          <button class="btn btn-gold" style="white-space:nowrap" id="addAccion">+ Agregar</button>
+        </div>
+        <ul class="custom-list" id="listAcciones"></ul>
+      </div>
+
+      <div id="tabZonas" style="display:none;">
+        <label class="field-label">Nueva zona</label>
+        <div style="display:flex;gap:8px;margin-bottom:16px;">
+          <input type="text" class="input" id="inputZona" placeholder="Ej: la espalda...">
+          <button class="btn btn-gold" style="white-space:nowrap" id="addZona">+ Agregar</button>
+        </div>
+        <ul class="custom-list" id="listZonas"></ul>
+      </div>
+
+      <div style="margin-top:24px;display:flex;gap:8px;justify-content:flex-end;">
+        <button class="btn btn-ghost" id="modalCancel">Cancelar</button>
+        <button class="btn btn-primary" id="modalSave">Guardar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dados.js" defer></script>
+</body>
+</html>

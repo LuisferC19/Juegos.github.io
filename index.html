@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuego & Deseo — Juegos de Pareja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Fuego <span>&</span> Deseo</div>
+    <div class="nav-hint">✦ Solo para dos ✦</div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="flame-deco">🔥</div>
+    <div class="flame-deco">✨</div>
+    <div class="flame-deco">💋</div>
+
+    <div class="hero-inner">
+      <p class="hero-pre">✦ Juego íntimo de pareja ✦</p>
+      <h1 class="hero-title">
+        Enciende la <em>noche</em>
+        <span class="gold">juntos</span>
+      </h1>
+      <p class="hero-sub">
+        Un espacio privado para explorar, reír y conectar.
+        Elige tu modo, elige tu intensidad y déjate llevar.
+      </p>
+      <div class="hero-cta">
+        <a href="#modulos" class="btn-main">
+          <span>🎮 Comenzar a jugar</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MÓDULOS -->
+  <section class="modules" id="modulos">
+    <p class="section-label">Elige tu aventura</p>
+    <h2 class="section-title">Modos de Juego</h2>
+
+    <div class="modules-grid">
+
+      <!-- DADOS -->
+      <a href="dados.html" class="module-card reveal">
+        <span class="card-icon">🎲</span>
+        <span class="card-tag">Módulo 01</span>
+        <h3 class="card-title">Dados Hot</h3>
+        <p class="card-desc">Dos dados: uno con partes del cuerpo, otro con acciones. Tira y obedece lo que el destino decida.</p>
+        <div class="card-intensity">
+          <div class="dot active"></div>
+          <div class="dot active"></div>
+          <div class="dot active"></div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <!-- CARTAS -->
+      <a href="cartas.html" class="module-card reveal">
+        <span class="card-icon">🃏</span>
+        <span class="card-tag">Módulo 02</span>
+        <h3 class="card-title">Cartas de Retos</h3>
+        <p class="card-desc">Mazo con preguntas íntimas y retos físicos. Cada carta es una sorpresa que te acerca más.</p>
+        <div class="card-intensity">
+          <div class="dot active"></div>
+          <div class="dot active"></div>
+          <div class="dot"></div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <!-- RULETA -->
+      <a href="ruleta.html" class="module-card reveal">
+        <span class="card-icon">🎡</span>
+        <span class="card-tag">Módulo 03</span>
+        <h3 class="card-title">Ruleta del Deseo</h3>
+        <p class="card-desc">Gira la ruleta y descubre qué categoría te toca. Suave, travieso o muy hot — tú decides el riesgo.</p>
+        <div class="card-intensity">
+          <div class="dot active"></div>
+          <div class="dot active"></div>
+          <div class="dot active"></div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+      <!-- VERDAD O RETO -->
+      <a href="cartas.html" class="module-card reveal" style="border-color: rgba(192,57,43,0.2);">
+        <span class="card-icon">💬</span>
+        <span class="card-tag">Módulo 04</span>
+        <h3 class="card-title">Verdad o Reto</h3>
+        <p class="card-desc">Las preguntas más íntimas o los retos más atrevidos. Honestidad o valentía, tú eliges.</p>
+        <div class="card-intensity">
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <span class="card-arrow">→</span>
+      </a>
+
+    </div>
+
+    <!-- Intensity Info -->
+    <div class="reveal" style="margin-top: 64px; padding: 40px; background: rgba(255,255,255,0.02); border: 1px solid rgba(212,168,83,0.12); text-align: center;">
+      <p style="font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); opacity: 0.7; margin-bottom: 20px;">Niveles de intensidad disponibles</p>
+      <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🌸</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 4px;">Suave</div>
+          <div style="font-size: 0.75rem; color: rgba(250,240,230,0.4);">Para comenzar</div>
+        </div>
+        <div style="color: rgba(212,168,83,0.3); display: flex; align-items: center; font-size: 1.5rem;">✦</div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">🔥</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 4px;">Travieso</div>
+          <div style="font-size: 0.75rem; color: rgba(250,240,230,0.4);">Subimos la temperatura</div>
+        </div>
+        <div style="color: rgba(212,168,83,0.3); display: flex; align-items: center; font-size: 1.5rem;">✦</div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">💥</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 4px;">Muy Hot</div>
+          <div style="font-size: 0.75rem; color: rgba(250,240,230,0.4);">Sin límites</div>
+        </div>
+        <div style="color: rgba(212,168,83,0.3); display: flex; align-items: center; font-size: 1.5rem;">✦</div>
+        <div style="text-align: center;">
+          <div style="font-size: 2rem; margin-bottom: 8px;">✏️</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 4px;">Personalizado</div>
+          <div style="font-size: 0.75rem; color: rgba(250,240,230,0.4);">Crea tus propios retos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Hecho con <span class="heart">♥</span> — Solo para nosotros dos &nbsp;✦&nbsp; Fuego & Deseo</p>
+  </footer>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+

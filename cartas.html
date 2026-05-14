@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartas de Retos — Fuego & Deseo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <nav>
+    <a href="index.html" class="nav-back">← Volver</a>
+    <div class="nav-logo">🃏 Cartas <span>de Retos</span></div>
+  </nav>
+
+  <div class="page-wrap">
+    <h1 class="page-title anim-fade">Cartas <em style="font-style:italic;color:var(--rouge)">de Retos</em></h1>
+    <p class="page-sub anim-fade">Roba una carta y cumple el reto</p>
+
+    <!-- INTENSITY -->
+    <div class="intensity-bar anim-fade" id="intensityBar">
+      <button class="intensity-btn active" data-level="suave">🌸 Suave</button>
+      <button class="intensity-btn" data-level="travieso">🔥 Travieso</button>
+      <button class="intensity-btn" data-level="hot">💥 Muy Hot</button>
+      <button class="intensity-btn" data-level="custom">✏️ Personalizado</button>
+    </div>
+
+    <!-- TYPE FILTER -->
+    <div class="card-type-row anim-fade">
+      <button class="type-filter active" data-type="all">Todas</button>
+      <button class="type-filter" data-type="reto">💪 Retos</button>
+      <button class="type-filter" data-type="pregunta">💬 Preguntas</button>
+      <button class="type-filter" data-type="verdad">🤫 Verdad</button>
+    </div>
+
+    <div class="cards-section">
+      <!-- DECK -->
+      <div class="deck-area">
+        <div class="deck-stack">
+          <div class="deck-ghost"></div>
+          <div class="deck-ghost"></div>
+        </div>
+        <div class="card-main" id="cardMain">
+          <div class="card-back">🃏</div>
+          <p style="font-family:'Playfair Display',serif;font-size:1.1rem;margin-top:12px;opacity:0.5;">Toca para robar</p>
+
+          <div class="card-timer" id="cardTimer">
+            <div class="timer-display" id="timerDisplay">00:30</div>
+            <div class="timer-bar"><div class="timer-fill" id="timerFill" style="width:100%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Counter -->
+      <div class="counter" id="counter">— cartas disponibles —</div>
+
+      <!-- Timer presets -->
+      <div class="timer-section">
+        <div class="timer-label">⏱ Temporizador</div>
+        <div class="timer-controls">
+          <button class="timer-preset" data-sec="0">Sin tiempo</button>
+          <button class="timer-preset active" data-sec="30">30 seg</button>
+          <button class="timer-preset" data-sec="60">1 min</button>
+          <button class="timer-preset" data-sec="120">2 min</button>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions-row">
+        <button class="btn btn-primary" id="drawBtn">🃏 &nbsp;Robar carta</button>
+        <button class="btn btn-ghost" id="shuffleBtn">🔀 &nbsp;Mezclar</button>
+        <button class="btn btn-ghost" id="customBtn">✏️ &nbsp;Personalizar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOM MODAL -->
+  <div class="modal-backdrop" id="customModal">
+    <div class="modal">
+      <button class="modal-close close-modal">✕</button>
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:4px;">Agregar cartas</h2>
+      <p style="font-size:0.8rem;color:rgba(250,240,230,0.4);margin-bottom:20px;">Crea tus propios retos y preguntas</p>
+
+      <label class="field-label">Tipo de carta</label>
+      <select class="type-select" id="newCardType">
+        <option value="reto">💪 Reto</option>
+        <option value="pregunta">💬 Pregunta</option>
+        <option value="verdad">🤫 Verdad</option>
+      </select>
+
+      <label class="field-label">Texto de la carta</label>
+      <div style="display:flex;gap:8px;margin-bottom:16px;">
+        <textarea class="input" id="newCardText" rows="3" placeholder="Escribe tu reto o pregunta..."></textarea>
+        <button class="btn btn-gold" style="flex-shrink:0;align-self:flex-end" id="addCard">+ Agregar</button>
+      </div>
+
+      <div class="custom-cards-list" id="customCardsList"></div>
+
+      <div style="margin-top:24px;display:flex;gap:8px;justify-content:flex-end;">
+        <button class="btn btn-ghost close-modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="cartas.js" defer></script>
+</body>
+</html>
